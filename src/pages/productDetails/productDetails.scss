@@ -1,0 +1,105 @@
+.details {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+
+    .img {
+        flex: 1;
+    }
+
+    .info {
+        flex: 1;
+
+        .rating {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 15px 0;
+
+            div {
+                flex: 1;
+            }
+
+            .star {
+                color: rgb(255, 196, 0);
+            }
+
+            .avg-rating {
+                color: rgb(255, 196, 0);
+                font-weight: 600;
+            }
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .short-desc {
+            max-width: 80%;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            color: var(--small-text-color);
+        }
+
+        button {
+            border: 1px solid var(--heading-text-color);
+            padding: 8px 20px;
+            border-radius: 4px;
+            background-color: var(--heading-text-color);
+            color: white;
+            font-weight: 500;
+            transition: all ease-in-out .25s;
+            box-shadow: 0 0 10px #aaaaaa;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: none;
+                background-color: transparent;
+                color: var(--heading-text-color);
+            }
+        }
+    }
+}
+
+.bottom-section {
+    width: 85%;
+    margin: auto;
+
+    .heading {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h3 {
+            color: #333;
+            cursor: pointer;
+        }
+
+        h3:nth-of-type(1) {
+            margin: 0 20px 0 0;
+        }
+    }
+
+    .text {
+        margin: 20px 0;
+
+        div{
+            margin: 20px 0 20px 20px;
+        }
+        .rating {
+            color: rgb(255, 196, 0);
+            font-weight: 600;
+            margin: 0 0 5px 0;
+        }
+    }
+
+}
+
+.active_tab {
+    color: var(--primary-color) !important;
+}

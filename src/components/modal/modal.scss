@@ -1,0 +1,19 @@
+.modal{
+
+    min-width: 800px;
+    max-width: 800px;
+    min-height: 400px;
+    max-height: 400px;
+
+    background-color: white;
+    box-shadow: 0 0 10px var(--primary-green);
+    border-radius: 10px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    // margin: 20% auto 0 auto;
+}
+

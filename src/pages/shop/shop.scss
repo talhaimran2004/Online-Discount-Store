@@ -1,0 +1,51 @@
+.filter-section {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px auto;
+
+    .category,
+    .price {
+        padding: 10px 20px;
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .search {
+        border: 1px solid #aaaaaa;
+        border-radius: 5px;
+        padding: 10px 20px;
+        color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            border: none;
+            width: 400px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .icon {
+            height: 23px;
+            width: auto;
+            transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.25s;
+            cursor: pointer;
+
+            &:hover {
+                transform: rotate(90deg);
+                color: var(--primary-color);
+            }
+        }
+
+    }
+}

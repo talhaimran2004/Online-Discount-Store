@@ -1,0 +1,75 @@
+/* google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+/*  css variables */
+:root {
+  --primary-color: #56cfe1;
+  --small-text-color: #999;
+  --heading-text-color: #0a1d37;
+
+  --primary-green: #61B846;
+  --primary-text: #BFBFBF;
+  --secondary-text: #024F9D;
+  --heading-fontSize: 2rem;
+}
+
+::placeholder{
+  color: var(--primary-text);
+
+}
+
+@font-face {
+  font-family: Hobo;
+  src: url(./assets/FontsFree-Net-HoboStd.ttf);
+}
+
+/* reset browser default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Hobo !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  color: var(--small-text-color);
+  font-size: 1rem;
+}
+
+h1,
+h2 {
+  font-size: var(--heading-fontSize);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+img {
+  width: 100%;
+}
+
+.active{
+  color: var(--primary-green);
+  font-weight: 600;
+}

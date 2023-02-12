@@ -1,0 +1,134 @@
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        margin-right: -500px;
+    }
+
+    100% {
+        margin-right: 0;
+    }
+}
+
+.card {
+    min-width: 329.75px;
+    max-width: 329.75px;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        .eye,
+        .heart,
+        a {
+            display: block;
+        }
+    }
+
+    img {
+        min-height: 461.64px;
+        max-height: 461.64px;
+        min-width: 329.75px;
+        max-width: 329.75px;
+        object-fit: cover;
+        transition: all .5s;
+        overflow: hidden;
+
+        &:hover {
+            transform: scale(1.45);
+        }
+    }
+
+    .discount {
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 20px;
+        color: #000;
+        padding: 5px 10px;
+        border-radius: 2px;
+        z-index: 1;
+    }
+
+    .heart,
+    .eye {
+        position: absolute;
+        display: block;
+        z-index: 1;
+        height: 37px;
+        width: auto;
+        background-color: #fff;
+        z-index: 1;
+        padding: 7px;
+        border-radius: 100px;
+        border: none;
+        color: #464646;
+        transition: all .35s;
+        display: none;
+        animation: fromRight .25s;
+
+        &:hover {
+            transform: translateX(7px);
+            color: white;
+            background-color: #000;
+        }
+    }
+
+    .heart {
+        top: 10px;
+        right: 10px;
+    }
+
+    .eye {
+        top: 55px;
+        right: 10px;
+    }
+
+    a {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        left: 0;
+        text-align: center;
+        background-color: #fff;
+        z-index: 1;
+        padding: 7px;
+        border-radius: 100px;
+        border: none;
+        color: #464646;
+        width: 35%;
+        margin: auto;
+        display: none;
+        transition: all .35s;
+        animation: fade 1s;
+
+        &:hover {
+            border: 1px white solid;
+            transform: scale(1.20);
+            color: white;
+            background-color: #000;
+        }
+    }
+    .details{
+        width: 329.75px !important;
+        margin: auto;
+        text-align: center;
+        width: 400px;
+        height: auto;
+        h2{
+            font-size: 20px;
+            margin: 5px 0;
+        }
+        h2, p{
+            color: #000;
+        }
+    }
+
+}

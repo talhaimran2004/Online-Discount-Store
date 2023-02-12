@@ -1,0 +1,165 @@
+nav {
+    padding: 10px 30px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background-color: #fffffffa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 5.5rem;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            transition: all .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:hover {
+                transform: scale(1.10);
+            }
+        }
+    }
+
+    .nav-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div {
+            flex: 1;
+            position: relative;
+
+            .icon {
+                width: 1.5rem;
+                height: auto;
+                margin: 0 8px;
+                transition: all .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                &:hover {
+                    transform: scale(1.25);
+                    color: var(--primary-green);
+                }
+            }
+
+            .badge {
+                width: 15px;
+                height: 15px;
+                background: var(--primary-green);
+                border: none;
+                border-radius: 100px;
+                color: white;
+                font-size: 0.8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: -3px;
+                right: 1px;
+            }
+        }
+
+        .profile {
+            flex: 1;
+
+            margin: 0 8px;
+            transition: all .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 100px;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                object-position: top;
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 50%;
+            }
+
+            &:hover {
+                transform: scale(1.25);
+                color: var(--primary-green);
+            }
+
+            .logout {
+                position: absolute;
+                top: 40px;
+                right: -25px;
+                background-color: var(--primary-green);
+                border: 1px solid var(--primary-green);
+                border-radius: 20px;
+                padding: 8px 20px;
+                color: white;
+                font-family: Hobo;
+                cursor: pointer;
+                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+            .modal-btn {
+                position: absolute;
+                top: 80px;
+                right: -25px;
+                background-color: var(--primary-green);
+                border: 1px solid var(--primary-green);
+                border-radius: 20px;
+                padding: 8px 20px;
+                color: white;
+                font-family: Hobo;
+                cursor: pointer;
+                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+            .dashboard-btn {
+                position: absolute;
+                top: 140px;
+                right: -25px;
+                background-color: var(--primary-green);
+                border: 1px solid var(--primary-green);
+                border-radius: 20px;
+                padding: 8px 20px;
+                color: white;
+                font-family: Hobo;
+                cursor: pointer;
+                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+
+    }
+
+    .navigation ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+
+        li {
+            margin: 0 10px;
+            font-size: 1.3rem;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+            &:hover {
+                color: var(--primary-green);
+                font-weight: 500;
+                letter-spacing: .3rem;
+            }
+        }
+    }
+
+    .modal{
+        position: fixed;
+        top: 150px;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+    }
+}

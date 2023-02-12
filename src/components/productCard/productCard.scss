@@ -1,0 +1,81 @@
+@keyframes scale {
+    0% {
+        transform: scale(1.25);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.product-card {
+    width: 280px;
+    // height: 350px;   
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+    animation: scale .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+
+    &:hover .img {
+        transform: scale(.97);
+    }
+
+    .img {
+        width: 280px;
+        height: 280px;
+        object-fit: cover;
+        overflow: hidden;
+        transition: all .25s;
+    }
+
+    .text {
+        padding: 15px 0px;
+        background-color: white;
+
+        .name {
+            color: var(--heading-text-color);
+        }
+
+        .category {
+            color: #333;
+            font-weight: 500;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        hr {
+            margin: 5px 0;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .price {
+                color: #333;
+                font-weight: 800;
+                font-size: 1.2rem;
+            }
+
+            .add-icon {
+                height: 24px;
+                width: auto;
+                color: var(--heading-text-color);
+                transition: all .25s;
+                transition-timing-function: ease-in-out;
+                border-radius: 100px;
+                border: none;
+                box-shadow: 0 0 5px var(--heading-text-color);
+                margin-right: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.12) rotate(90deg);
+                }
+            }
+        }
+    }
+
+}
