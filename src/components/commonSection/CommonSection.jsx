@@ -1,5 +1,5 @@
 import React from 'react'
-import hero from '../../assets/images/shop-hero.webp'
+import hero from '../../assets/img/common.jpg'
 
 const CommonSection = ({title}) => {
   return (

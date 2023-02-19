@@ -1,46 +1,53 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CommonSection from '../../components/commonSection/CommonSection'
 import Helmet from '../../components/helmet/Helmet'
-import Products from '../../assets/data/products'
 import ProductList from '../../components/productList/ProductList'
 import { BiSearchAlt } from 'react-icons/bi'
 import './shop.scss'
+import useGetData from '../../customHooks/useGetData'
 
 const Shop = () => {
-  const [data, setData] = useState(Products)
+  const {data: allProducts} = useGetData('products')
+  console.log(allProducts);
+  
+  const [data, setData] = useState(allProducts)
+
+  useEffect(() => {
+    setData(allProducts)
+  }, [allProducts])
 
   let handleByCategory = e => {
     let filterValue = e.target.value;
 
     if (filterValue === 'all') {
-      setData(Products)
+      setData(allProducts)
     }
-    if (filterValue === 'sofa') {
-      let filteredProducts = Products.filter(item => item.category === 'sofa')
+    if (filterValue === 'vegetables') {
+      let filteredProducts = allProducts.filter(item => item.category === 'vegetables')
       setData(filteredProducts)
     }
-    if (filterValue === 'mobile') {
-      let filteredProducts = Products.filter(item => item.category === 'mobile')
+    if (filterValue === 'meat') {
+      let filteredProducts = allProducts.filter(item => item.category === 'meat')
       setData(filteredProducts)
     }
-    if (filterValue === 'chair') {
-      let filteredProducts = Products.filter(item => item.category === 'chair')
+    if (filterValue === 'fruits') {
+      let filteredProducts = allProducts.filter(item => item.category === 'fruits')
       setData(filteredProducts)
     }
-    if (filterValue === 'watch') {
-      let filteredProducts = Products.filter(item => item.category === 'watch')
+    if (filterValue === 'dry-fruits') {
+      let filteredProducts = allProducts.filter(item => item.category === 'dry-fruits')
       setData(filteredProducts)
     }
-    if (filterValue === 'wireless') {
-      let filteredProducts = Products.filter(item => item.category === 'wireless')
+    if (filterValue === 'other') {
+      let filteredProducts = allProducts.filter(item => item.category === 'other')
       setData(filteredProducts)
     }
   }
 
   let handleSearch = e => {
     let value = e.target.value;
-    let searchedProduct = Products.filter(
-      item => item.productName.toLowerCase().includes(value.toLowerCase())
+    let searchedProduct = allProducts.filter(
+      item => item.title.toLowerCase().includes(value.toLowerCase())
     )
     setData(searchedProduct)
   }
@@ -57,11 +64,11 @@ const Shop = () => {
         <select className='category' onChange={handleByCategory}>
           <option hidden>Sort By Category</option>
           <option value="all">All</option>
-          <option value="sofa">Sofa</option>
-          <option value="mobile">Mobile</option>
-          <option value="chair">Chair</option>
-          <option value="watch">Watch</option>
-          <option value="wireless">Wireless</option>
+          <option value="vegetables">Vegetables</option>
+          <option value="meat">Meat</option>
+          <option value="dry-fruits">Dry Fruits</option>
+          <option value="fruits">Fruits</option>
+          <option value="other">other</option>
         </select>
 
         <select className='price'>
@@ -77,7 +84,7 @@ const Shop = () => {
       </div>
 
       {
-        data.length === 0 ? <h2 style={{textAlign: 'center', margin: '20px 0'}}>No Products Found😕</h2  > :
+        data.length === 0 ? <h2 style={{textAlign: 'center', margin: '20px 0'}}>No allProducts Found😕</h2  > :
           <ProductList data={data} />
       }
 

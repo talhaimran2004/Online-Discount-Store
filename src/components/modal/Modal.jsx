@@ -5,8 +5,9 @@ import { db } from '../../firebase.config';
 import ProductCard from '../productCard/ProductCard';
 import ProductList from '../productList/ProductList';
 import './modal.scss'
+import { GrClose } from 'react-icons/gr'
 
-const Modal = ({ user }) => {
+const Modal = ({ user, setModal }) => {
 
     const { currentUser } = useAuth()
     const [data, setData] = useState({})
@@ -27,6 +28,9 @@ const Modal = ({ user }) => {
 
     return (
         <div className='modal'>
+            <div className='icon-div'>
+                <GrClose className='icon' onClick={()=>setModal(false)}/>
+            </div>
             {
                 data.cartItems?.map(item => <ProductCard item={item} />)
             }

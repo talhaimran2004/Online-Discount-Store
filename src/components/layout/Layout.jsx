@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import AdminNav from '../../admin/AdminNav'
+import AdminNav from '../../admin/adminNav/AdminNav'
 import Routers from '../../routers/Routers'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'

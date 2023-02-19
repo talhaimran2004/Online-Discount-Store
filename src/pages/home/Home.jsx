@@ -8,7 +8,8 @@ import trend3 from '../../assets/images/trend3.jpg'
 import trend4 from '../../assets/images/trend4.jpg'
 import Helmet from '../../components/helmet/Helmet'
 import ProductList from '../../components/productList/ProductList'
-import Products from '../../assets/data/products'
+// import Products from '../../assets/data/products'
+import useGetData from '../../customHooks/useGetData'
 
 const Home = () => {
   const year = new Date().getFullYear();
@@ -16,16 +17,19 @@ const Home = () => {
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   const monthName = months[monthIndex]
 
-  const [trendingProducts, setTrendingProducts] = useState(Products)
-  const [recomendedProducts, setRecomendedProducts] = useState(Products)
+  const {data: products} = useGetData('products')
+  console.log(products);
+  
+  const [trendingProducts, setTrendingProducts] = useState([])
+  const [recomendedProducts, setRecomendedProducts] = useState([])
 
   useEffect(() => {
-    let filteredProducts = trendingProducts.filter(item => item.category === 'chair')
+    let filteredProducts = products.filter(item => item.category === 'meat')
     setTrendingProducts(filteredProducts)  
 
-    let recomendedProducts = trendingProducts.filter(item => item.category === 'sofa')
+    let recomendedProducts = products.filter(item => item.category === 'meat')
     setRecomendedProducts(recomendedProducts)    
-  }, [])
+  }, [products])
 
   return (
     <div>
@@ -33,7 +37,7 @@ const Home = () => {
 
       <ImageCraousel />
 
-      <div className="best-seller">
+      {/* <div className="best-seller">
 
         <h1>Best Seller in {year}</h1>
 
@@ -45,7 +49,7 @@ const Home = () => {
           <Card img={trend2} alt={'watch'} name={'Jat Black Watch'} price={'4,999'} price2={'2,499'} />
           <Card img={trend4} alt={'Jacket'} name={'Green Premium Jacket'} price={'4,999'} price2={'2,499'} />
         </div>
-      </div>
+      </div> */}
 
       <div className="trending">
 

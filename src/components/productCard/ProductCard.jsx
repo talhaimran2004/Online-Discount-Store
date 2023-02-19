@@ -15,8 +15,8 @@ const ProductCard = ({ item, index }) => {
         dispatch(
             addItem({
                 id: item.id,
-                productName: item.productName,
-                imgUrl: item.imgUrl,
+                title: item.title,
+                imgURL: item.imgURL,
                 price: item.price
             }
             )
@@ -27,12 +27,12 @@ const ProductCard = ({ item, index }) => {
     return (
         <div className='product-card' key={index}>
             <div className="img">
-                <img src={item.imgUrl} alt="product" />
+                <img src={item.imgURL} alt="product" />
             </div>
 
             <div className="text">
                 <h3 className="name">
-                    <Link to={`/shop/${item.id}`}>{item.productName}</Link>
+                    <Link to={`/shop/${item.id}`}>{item.title}</Link>
                 </h3>
 
                 <div className="category">
@@ -42,7 +42,7 @@ const ProductCard = ({ item, index }) => {
                 <hr />
 
                 <div className="card-bottom">
-                    <div className="price">{item.price}</div>
+                    <div className="price">{item.price}</div>  <span>{item.quantity}</span>
                     <RiAddCircleFill className='add-icon' onClick={addToCart} />
                 </div>
             </div>

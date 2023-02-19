@@ -1,0 +1,53 @@
+.add-heading{
+    color: #000;
+    width: 75%;
+    margin: 30px auto;
+    text-decoration: underline;
+}
+.add-form{
+    width: 75%;
+    margin: 0 auto 50px auto;
+    p{
+        color: var(--secondary-text);
+        font-size: 12px;
+    }
+    input,select{
+        width: 100%;
+        padding: 8px 20px;
+        margin-top: 2px;
+        margin-bottom: 12px;
+        border-radius: 5px;
+        border: 1px solid var(--primary-text);
+        &:focus{
+            outline: none;
+        }
+    }
+    
+    .section{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            flex: 1;
+            input, select{
+                width: 99%;
+            }
+        }
+    }
+
+    button{
+        padding: 8px 20px;
+        color: white;
+        font-size: 17px;
+        background-color: var(--secondary-text);
+        transition: all .35s;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+    
+}

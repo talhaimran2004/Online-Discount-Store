@@ -65,11 +65,16 @@ nav {
 
         .profile {
             flex: 1;
-
             margin: 0 8px;
-            transition: all .25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all .50s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             border-radius: 100px;
             position: relative;
+            cursor: pointer;
+
+            &:hover {
+                transform: translateY(3px);
+                color: var(--primary-green);
+            }
 
             img {
                 object-fit: cover;
@@ -79,59 +84,29 @@ nav {
                 border-radius: 50%;
             }
 
-            &:hover {
-                transform: scale(1.25);
-                color: var(--primary-green);
-            }
-
-            .logout {
+            .profile-dropdown{
                 position: absolute;
                 top: 40px;
                 right: -25px;
-                background-color: var(--primary-green);
+                padding: 10px;
                 border: 1px solid var(--primary-green);
-                border-radius: 20px;
-                padding: 8px 20px;
-                color: white;
-                font-family: Hobo;
-                cursor: pointer;
-                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                &:hover {
-                    transform: scale(1.02);
+                border-radius: 5px;
+                background-color: var(--primary-green);
+                color: #fff;
+                li{
+                    padding: 10px 0 3px 0;
+                    border-bottom: 1px solid #fff;
+                    font-weight: 500;
+                    font-family: 'Courier New', Courier, monospace;
+                    transition: all .55s;
+                    &:hover{
+                        transform: scale(1.02);
+                        color: Black;
+                        border-bottom: 1px solid #000;
+                    }
                 }
             }
-            .modal-btn {
-                position: absolute;
-                top: 80px;
-                right: -25px;
-                background-color: var(--primary-green);
-                border: 1px solid var(--primary-green);
-                border-radius: 20px;
-                padding: 8px 20px;
-                color: white;
-                font-family: Hobo;
-                cursor: pointer;
-                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                &:hover {
-                    transform: scale(1.02);
-                }
-            }
-            .dashboard-btn {
-                position: absolute;
-                top: 140px;
-                right: -25px;
-                background-color: var(--primary-green);
-                border: 1px solid var(--primary-green);
-                border-radius: 20px;
-                padding: 8px 20px;
-                color: white;
-                font-family: Hobo;
-                cursor: pointer;
-                transition: all .55s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                &:hover {
-                    transform: scale(1.02);
-                }
-            }
+
         }
 
     }
@@ -155,7 +130,7 @@ nav {
         }
     }
 
-    .modal{
+    .modal {
         position: fixed;
         top: 150px;
         right: 0;
